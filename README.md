@@ -1,8 +1,8 @@
-# xmastree2020
+# xmas-tree-lights
 
-This repository contains the code used for Matt's Christmas tree, as featured in ["I wired my tree with 500 LED lights and calculated their 3D coordinates"](https://www.youtube.com/watch?v=TvlpIojusBE).
+This repository is shameless ripped from Matt Parker's xmastree2020 project, with changes to project organization, some lighting examples, and installation made by me.
 
-`xmaslights-spin.py` is the original source code from the video. Code in the `examples` folder has been provided by other contributors!
+From the original: "This repository contains the code used for Matt's Christmas tree, as featured in ["I wired my tree with 500 LED lights and calculated their 3D coordinates"](https://www.youtube.com/watch?v=TvlpIojusBE)."
 
 ## Usage
 
@@ -20,6 +20,4 @@ You're welcome to contribute! There are a few different places that your PR coul
 
 - If you've done a bigger bit of work, consider keeping this in your own repository, and opening a PR to update the Further Work section below.
 
-## Further Work
 
-Links to larger projects based on this one
