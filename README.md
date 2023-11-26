@@ -1,6 +1,6 @@
 # xmas-tree-lights
 
-This repository is shameless ripped from Matt Parker's xmastree2020 project, with changes to project organization, some lighting examples, and installation made by me.
+This repository is shamelessly ripped from Matt Parker's xmastree2020 project, with changes to project organization, some lighting examples, and installation made by me.
 
 From the original: "This repository contains the code used for Matt's Christmas tree, as featured in ["I wired my tree with 500 LED lights and calculated their 3D coordinates"](https://www.youtube.com/watch?v=TvlpIojusBE)."
 
