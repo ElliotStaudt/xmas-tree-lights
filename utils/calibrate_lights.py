@@ -19,11 +19,7 @@ def l1(pair):
     return pair[0] + pair[1]
 
 
-def calibrate(PIXEL_COUNT: int = 200) -> None:
-    cap = cv2.VideoCapture(0)
-    print(dir(neopixel))
-    pixels = neopixel.NeoPixel(board.D18, PIXEL_COUNT, auto_write=False)
-
+def getPositions(pixels, PIXEL_COUNT) -> list:
     # Four passes rotating clockwise
     # The middle of the image is the origin
     # First pass:
@@ -53,10 +49,8 @@ def calibrate(PIXEL_COUNT: int = 200) -> None:
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             (minVal, maxVal, minLoc, maxLoc) = cv2.minMaxLoc(gray)
             logger.debug(f"Location: {maxLoc}, value {maxVal}")
-            if maxVal > 128:
-                positions[rotation].append([maxLoc[0], maxLoc[1]])
-            else:
-                positions[rotation].append([100000, 100000])
+
+            positions[rotation].append([maxLoc[0], maxLoc[1], maxVal])
 
             # testing to make sure, what is happening makes sense
             # before circle
@@ -77,6 +71,16 @@ def calibrate(PIXEL_COUNT: int = 200) -> None:
             cv2.waitKey(0)
             pixels.fill(black_c)
             pixels.show()
+
+    return positions
+
+
+def calibrate(PIXEL_COUNT: int = 200) -> None:
+    cap = cv2.VideoCapture(0)
+    print(dir(neopixel))
+    pixels = neopixel.NeoPixel(board.D18, PIXEL_COUNT, auto_write=False)
+
+    positions = getPositions(pixels, PIXEL_COUNT)
 
     # get a new reference image to get the coordinate frame
     ret, frame = cap.read()
